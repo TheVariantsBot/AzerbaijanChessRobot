@@ -20,14 +20,14 @@ class Conversation:
             game.ping(60, 120)
             self.send_reply(line, "Waiting 60 seconds...")
         elif cmd == "name":
-            self.send_reply(line, "{} LICHESS-BOT from OIVAS7572 (v{})".format(self.engine.name(), self.version))
+            self.send_reply(line, "{} Strong Lichess Bot By @BotAZ! :D(v{})".format(self.engine.name(), self.version))
         elif cmd == "howto":
-            self.send_reply(line, "How to run your own bot: Check out 'Lichess Bot API'")
+            self.send_reply(line, "Check Out Your 'Lichess-Bot API'")
         elif cmd == "eval" and line.room == "spectator":
             stats = self.engine.get_stats()
             self.send_reply(line, ", ".join(stats))
         elif cmd == "eval":
-            self.send_reply(line, "I don't tell that to my opponent, sorry.")
+            self.send_reply(line, "Nah, Man! :) I'm Sorry! :)")
         elif cmd == "queue":
             if self.challengers:
                 challengers = ", ".join(["@" + challenger.challenger_name for challenger in reversed(self.challengers)])
