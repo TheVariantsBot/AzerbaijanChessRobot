@@ -1,9 +1,10 @@
-token: "yourtoken"           # lichess OAuth2 Token
+
+token: "TQVDlgvQ0Z3NSy2m"           # lichess OAuth2 Token
 url: "https://lichess.org/"  # lichess base URL
 
 engine:                      # engine settings
   dir: "./"                  # dir containing engines, relative to this project
-  name: "stockfishmodern"        # binary name of the engine to use
+  name: "stockfishmulti"        # binary name of the engine to use
   protocol: "uci"            # "uci" or "xboard"
   uci_ponder: true           # think on opponent time; only works if "protocol" is "uci"
   polyglot:
@@ -17,7 +18,7 @@ engine:                      # engine settings
 #        - engines/atomicbook2.bin
 #      etc.
 #      use the same pattern for giveaway, crazyhouse, horde, kingofthehill, racingkings, 3check as well
-      min_weight: 50          # does not select moves with weight below min_weight (min 0, max: 65535)
+      min_weight: 10          # does not select moves with weight below min_weight (min 0, max: 65535)
       selection: "best_move"  # move selection is one of "weighted_random", "uniform_random" or "best_move" (but not below the min_weight in 2. and 3. case)
     max_depth: 100            # half move max depth
 # engine_options:             # any custom command line params to pass to the engine
@@ -25,7 +26,7 @@ engine:                      # engine settings
   uci_options:                # arbitrary UCI options passed to the engine
     Move Overhead: 100        # increase if your bot flags games too often
     Threads: 7                # max CPU threads the engine can use
-    Hash: 400                 # max memory (in megabytes) the engine can allocate
+    Hash: 300                 # max memory (in megabytes) the engine can allocate
 #   Clear Hash: true          # Clear the hash table
 #   go_commands:              # additional options to pass to the UCI go command
 #     nodes: 1                # Search so many nodes only.
@@ -57,14 +58,14 @@ challenge:                    # incoming challenges
   variants:                   # chess variants to accept (http://lichess.org/variant)
     - standard
     - fromPosition
-#   - antichess
-#   - atomic
+    - antichess
+    - atomic
     - chess960
-#   - crazyhouse
-#   - horde
-#   - kingOfTheHill
-#   - racingKings
-#   - threeCheck
+    - crazyhouse
+    - horde
+    - kingOfTheHill
+    - racingKings
+    - threeCheck
   time_controls:              # time controls to accept
     - bullet
     - blitz
@@ -73,4 +74,4 @@ challenge:                    # incoming challenges
 #   - correspondence
   modes:                      # game modes to accept
     - casual                  # unrated games
-    - rated                   # rated games - must comment if the engine doesn't try to win
+    - rated                   # rated games - must comment if the engine doesn't 
