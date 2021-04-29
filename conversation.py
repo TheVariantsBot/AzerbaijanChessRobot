@@ -20,7 +20,7 @@ class Conversation:
             game.ping(60, 120)
             self.send_reply(line, "Waiting 60 seconds...")
         elif cmd == "name":
-            self.send_reply(line, "{} Strong Lichess Bot By @BotAZ! :D(v{})".format(self.engine.name(), self.version))
+            self.send_reply(line, "{} Strong Lichess Bot By @TheFastestMan! :D(v{})".format(self.engine.name(), self.version))
         elif cmd == "howto":
             self.send_reply(line, "Check Out Your 'Lichess-Bot API'")
         elif cmd == "eval" and line.room == "spectator":
